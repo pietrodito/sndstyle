@@ -1,7 +1,8 @@
 #'@export
 save_settings <- function() {
 
-  file.copy("~/.Rprofile", "~/.config/rstudio/", overwrite = TRUE)
+  cli::cli_alert_info("Sauvegarde du fichier {.emph .Rprofile}")
+  file.copy("~/.Rprofile", "~/.config/rstudio/Rprofile", overwrite = TRUE)
 
   sndshare::export("~/.config/rstudio")
 

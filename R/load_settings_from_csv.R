@@ -6,7 +6,8 @@ load_settings_from_csv <- function(filepath) {
                             project_name = "rstudio",
                             open_project = FALSE,
                             verbose = FALSE)
-  file.copy("~/.config/rstudio/.Rprofile", "~/", overwrite = TRUE)
+  cli::cli_alert_info("Restitution du fichier {.emph .Rprofile}")
+  file.copy("~/.config/rstudio/Rprofile", "~/.Rprofile", overwrite = TRUE)
   cli::cli_alert_info(paste(
     "Vous devez redémarrer complètement RStudio",
     "pour que vos nouveaux paramètres s'appliquent.")
